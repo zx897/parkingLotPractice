@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/manager")
 public class MangerControllerImpl implements ManagerController {
     final ManagerService managerService;
+
     public MangerControllerImpl(ManagerService managerService) {
         this.managerService = managerService;
     }
@@ -35,20 +36,9 @@ public class MangerControllerImpl implements ManagerController {
 
     @Override
     @PostMapping("/employee/{employeeId}/customer/{customerId}")
-    public void assignEmloyee(@PathVariable Long employeeId, @PathVariable Long customerId){
+    public void assignEmloyee(@PathVariable Long employeeId, @PathVariable Long customerId) {
         managerService.creatParkingTicket(employeeId, customerId);
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
