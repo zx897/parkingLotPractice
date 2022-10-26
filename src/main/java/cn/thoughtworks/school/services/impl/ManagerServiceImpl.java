@@ -21,6 +21,10 @@ public class ManagerServiceImpl implements ManagerService {
     EmployeeRepository employeeRepository;
     CustomerRepository customerRepository;
 
+    public ManagerServiceImpl(EmployeeRepository employeeRepository, CustomerRepository customerRepository) {
+        this.employeeRepository = employeeRepository;
+        this.customerRepository = customerRepository;
+    }
 
     public ManagerServiceImpl(ParkingLotRepository parkingLotRepository, ParkingTicketRepository parkingTicketRepository, EmployeeRepository employeeRepository, CustomerRepository customerRepository) {
         this.parkingLotRepository = parkingLotRepository;

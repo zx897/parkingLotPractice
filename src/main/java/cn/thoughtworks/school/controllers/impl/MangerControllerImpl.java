@@ -17,13 +17,11 @@ public class MangerControllerImpl implements ManagerController {
     }
 
     @Override
-    @PostMapping("/parking-lot")
     public void createParkingLot(@RequestBody ParkingLotRequestDto parkingLotRequestDto) {
         managerService.createParkingLot(parkingLotRequestDto);
     }
 
     @Override
-    @PostMapping("/employee")
     public void createEmloyee(@RequestBody EmployeRequestDTO employeRequestDTO) {
         managerService.createEmployee(employeRequestDTO);
     }
@@ -33,10 +31,8 @@ public class MangerControllerImpl implements ManagerController {
         managerService.createCustomer(customerRequestDTO);
     }
 
-
     @Override
-    @PostMapping("/employee/{employeeId}/customer/{customerId}")
-    public void assignEmloyee(@PathVariable Long employeeId, @PathVariable Long customerId) {
+    public void assignEmployee(@PathVariable Long employeeId, @PathVariable Long customerId) {
         managerService.creatParkingTicket(employeeId, customerId);
     }
 
