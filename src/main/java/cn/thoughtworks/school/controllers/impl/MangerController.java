@@ -15,18 +15,7 @@ public class MangerController {
         this.managerService = managerService;
     }
 
-    @PostMapping("/createParking-lot")
-    public void createParkingLot(@RequestBody ParkingLotRequestDto parkingLotRequestDto) {
-        managerService.createParkingLot(parkingLotRequestDto);
-    }
 
-
-
-    @PostMapping("/createCustomer")
-
-    public void createCustomer(@RequestBody CustomerRequestDTO customerRequestDTO) {
-        managerService.createCustomer(customerRequestDTO);
-    }
 
     @PostMapping("/creatParkingTicket/{employeeId}/{customerId}")
 

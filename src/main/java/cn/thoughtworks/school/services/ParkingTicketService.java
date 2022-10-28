@@ -1,6 +1,5 @@
 package cn.thoughtworks.school.services;
 
-public interface ManagerService {
-
+public interface ParkingTicketService {
     void creatParkingTicket(Long employeeId, Long customerId);
 }
