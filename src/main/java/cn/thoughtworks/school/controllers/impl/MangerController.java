@@ -15,28 +15,23 @@ public class MangerController {
         this.managerService = managerService;
     }
 
-    @PostMapping("/parking-lot")
+    @PostMapping("/createParking-lot")
     public void createParkingLot(@RequestBody ParkingLotRequestDto parkingLotRequestDto) {
         managerService.createParkingLot(parkingLotRequestDto);
     }
 
-    @PostMapping("/employee")
 
-    public void createEmloyee(@RequestBody EmployeRequestDTO employeRequestDTO) {
-        managerService.createEmployee(employeRequestDTO);
-    }
 
-    @PostMapping("/customer")
+    @PostMapping("/createCustomer")
 
     public void createCustomer(@RequestBody CustomerRequestDTO customerRequestDTO) {
         managerService.createCustomer(customerRequestDTO);
     }
 
-    @PostMapping("/parkingTicket/{employeeId}/{customerId}")
+    @PostMapping("/creatParkingTicket/{employeeId}/{customerId}")
 
-    public void assignEmployee(@PathVariable Long employeeId, @PathVariable Long customerId) {
+    public void creatParkingTicket(@PathVariable Long employeeId, @PathVariable Long customerId) {
         managerService.creatParkingTicket(employeeId, customerId);
     }
-
 
 }
