@@ -3,7 +3,7 @@ package cn.thoughtworks.school.entities.dto;
 import cn.thoughtworks.school.entities.Customer;
 import cn.thoughtworks.school.entities.Employee;
 
-public class ParkingTicketRequestDto {
+public class createParkingTicketRequestDto {
     private Long id;
     private Customer customer;
     private Employee employee;

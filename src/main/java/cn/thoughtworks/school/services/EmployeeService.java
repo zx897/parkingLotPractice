@@ -1,7 +1,7 @@
 package cn.thoughtworks.school.services;
 
-import cn.thoughtworks.school.entities.dto.EmployeRequestDTO;
+import cn.thoughtworks.school.entities.dto.createEmployeRequestDTO;
 
 public interface EmployeeService {
-    void createEmployee(EmployeRequestDTO employeRequestDTO);
+    void createEmployee(createEmployeRequestDTO createEmployeRequestDTO);
 }

@@ -1,7 +1,7 @@
 package cn.thoughtworks.school.services.impl;
 
 import cn.thoughtworks.school.entities.ParkingLot;
-import cn.thoughtworks.school.entities.dto.ParkingLotRequestDto;
+import cn.thoughtworks.school.entities.dto.createParkingLotRequestDto;
 import cn.thoughtworks.school.repository.ParkingLotRepository;
 import cn.thoughtworks.school.services.ParkingLotService;
 import org.springframework.stereotype.Service;
@@ -17,9 +17,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     }
 
     @Override
-    public void createParkingLot(ParkingLotRequestDto parkingLotRequestDto) {
+    public void createParkingLot(createParkingLotRequestDto createParkingLotRequestDto) {
         ParkingLot parkingLot = ParkingLot.builder()
-                .name(parkingLotRequestDto.getName())
+                .name(createParkingLotRequestDto.getName())
                 .build();
         parkingLotRepository.save(parkingLot);
     }

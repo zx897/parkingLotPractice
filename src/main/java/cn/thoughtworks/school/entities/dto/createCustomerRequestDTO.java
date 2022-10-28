@@ -6,6 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class EmployeRequestDTO {
+public class createCustomerRequestDTO {
     private String name;
+    private String carLicense;
 }

@@ -1,7 +1,7 @@
 package cn.thoughtworks.school.services.impl;
 
 import cn.thoughtworks.school.entities.Employee;
-import cn.thoughtworks.school.entities.dto.EmployeRequestDTO;
+import cn.thoughtworks.school.entities.dto.createEmployeRequestDTO;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.services.EmployeeService;
 import org.springframework.stereotype.Service;
@@ -17,9 +17,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void createEmployee(EmployeRequestDTO employeRequestDTO) {
+    public void createEmployee(createEmployeRequestDTO createEmployeRequestDTO) {
         Employee employee = Employee.builder()
-                .name(employeRequestDTO.getName())
+                .name(createEmployeRequestDTO.getName())
                 .build();
         employeeRepository.save(employee);
     }

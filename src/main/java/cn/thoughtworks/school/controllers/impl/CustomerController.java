@@ -1,7 +1,6 @@
 package cn.thoughtworks.school.controllers.impl;
 
-import cn.thoughtworks.school.entities.dto.CustomerRequestDTO;
-import cn.thoughtworks.school.entities.dto.EmployeRequestDTO;
+import cn.thoughtworks.school.entities.dto.createCustomerRequestDTO;
 import cn.thoughtworks.school.services.CustomerService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/customer")
 public class CustomerController {
 
-
     final CustomerService customerService;
 
     public CustomerController(CustomerService customerService) {
@@ -21,7 +19,7 @@ public class CustomerController {
     }
 
     @PostMapping("/createCustomer")
-    public void createCustomer(@RequestBody CustomerRequestDTO customerRequestDTO) {
-        customerService.createCustomer(customerRequestDTO);
+    public void createCustomer(@RequestBody createCustomerRequestDTO createCustomerRequestDTO) {
+        customerService.createCustomer(createCustomerRequestDTO);
     }
 }
