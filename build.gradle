@@ -32,6 +32,7 @@ repositories {
     maven {
         url 'https://maven.aliyun.com/repository/central/'
     }
+    mavenCentral()
 }
 
 sourceCompatibility = 1.8
@@ -39,7 +40,7 @@ sourceCompatibility = 1.8
 
 dependencies {
     implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-    testImplementation "junit:junit:4.12"
+    testImplementation 'junit:junit:4.13.1'
     testImplementation "org.mockito:mockito-core:1.10.19"
     implementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter'
@@ -50,21 +51,22 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-devtools'
     implementation 'mysql:mysql-connector-java:8.0.30'
-    implementation 'org.apache.httpcomponents:httpclient:4.4'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
     implementation 'org.apache.httpcomponents:httpmime:4.4'
-    implementation 'org.json:json:20140107'
+    implementation 'org.json:json:20220924'
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.flywaydb:flyway-core:5.0.7'
-    implementation 'commons-io:commons-io:2.5'
-    compileOnly 'org.projectlombok:lombok:1.18.0'
-
-    testImplementation 'org.projectlombok:lombok:1.18.0'
-    testImplementation 'org.codehaus.groovy:groovy-all:2.4.6'
+    implementation 'commons-io:commons-io:2.11.0'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    implementation 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    testImplementation 'org.projectlombok:lombok:1.18.8'
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.13'
     testImplementation 'org.spockframework:spock-core:1.0-groovy-2.4'
     testImplementation 'org.spockframework:spock-spring:1.0-groovy-2.4'
     implementation 'org.mockito:mockito-core:4.3.1'
     implementation 'org.junit.jupiter:junit-jupiter-api:5.3.2'
-    testCompile "junit:junit:4.12"
+    testCompile 'junit:junit:4.13.1'
     testCompile "org.mockito:mockito-core:1.10.19"
     testCompile "org.easytesting:fest-assert-core:2.0M10"
 }

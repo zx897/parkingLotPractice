@@ -12,7 +12,6 @@ import javax.persistence.Id;
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class Manager {
     @Id

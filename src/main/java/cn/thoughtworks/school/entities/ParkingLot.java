@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class ParkingLot{
     @Id

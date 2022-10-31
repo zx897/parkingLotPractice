@@ -7,8 +7,8 @@ import javax.persistence.*;
 @Entity
 @Setter
 @Getter
+@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class ParkingTicket {
     @Id

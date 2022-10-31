@@ -9,8 +9,8 @@ import javax.persistence.*;
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
+@NoArgsConstructor
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
