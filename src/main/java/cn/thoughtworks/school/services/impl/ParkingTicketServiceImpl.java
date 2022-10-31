@@ -22,15 +22,25 @@ public class ParkingTicketServiceImpl implements ParkingTicketService {
     private final CustomerRepository customerRepository;
 
     @Override
-    public void creatParkingTicket(Long employeeId, Long customerId) {
-        Optional<Employee> employeeById = employeeRepository.findById(employeeId);
+    public void createParkingTicket(Long customerId) {
         Optional<Customer> customerById = customerRepository.findById(customerId);
         ParkingTicket parkingTicket = ParkingTicket.builder()
-                .type(Type.PARKED)
+                .type(Type.UNSIGNED)
                 .customer(customerById.orElse(null))
-                .employee(employeeById.orElse(null))
                 .build();
         parkingTicketRepository.save(parkingTicket);
+    }
+
+    @Override
+    public void assignParkingTicket(Long employeeId, Long customerId) {
+        Optional<Employee> employeeById = employeeRepository.findById(employeeId);
+        Optional<ParkingTicket> parkingTicketById = parkingTicketRepository.findById(customerId);
+        if (parkingTicketById.isPresent() && employeeById.isPresent()) {
+            ParkingTicket parkingTicket = parkingTicketById.get();
+            parkingTicket.setType(Type.PARKED );
+            parkingTicket.setEmployee(employeeById.get());
+            parkingTicketRepository.save(parkingTicket);
+        }
 
     }
 
@@ -41,4 +51,6 @@ public class ParkingTicketServiceImpl implements ParkingTicketService {
             ParkingTicket parkingTicket = parkingTicketById.get();
             parkingTicket.setType(Type.FINISHED );        }
     }
+
+
 }

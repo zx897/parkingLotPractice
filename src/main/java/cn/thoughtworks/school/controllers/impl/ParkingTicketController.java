@@ -16,10 +16,17 @@ public class ParkingTicketController {
     }
 
 
+    //为顾客生成停车单
+    @PostMapping("/assignParkingTicket/{customerId}")
+    public void createParkingTicket(@PathVariable Long customerId) {
+        parkingTicketService.createParkingTicket(customerId);
+    }
+
+    //小弟抢单
     @PostMapping("/assignParkingTicket/{employeeId}/{customerId}")
 
-    public void creatParkingTicket(@PathVariable Long employeeId, @PathVariable Long customerId) {
-        parkingTicketService.creatParkingTicket(employeeId, customerId);
+    public void assignParkingTicket(@PathVariable Long employeeId, @PathVariable Long customerId) {
+        parkingTicketService.assignParkingTicket(employeeId, customerId);
     }
 
     //顾客取车
