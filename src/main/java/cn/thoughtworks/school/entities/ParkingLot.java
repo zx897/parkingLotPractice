@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @Builder
+@NoArgsConstructor
 public class ParkingLot{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

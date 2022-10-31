@@ -2,10 +2,7 @@ package cn.thoughtworks.school.controllers.impl;
 
 import cn.thoughtworks.school.entities.dto.createParkingLotRequestDto;
 import cn.thoughtworks.school.services.ParkingLotService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/parkingLot")
@@ -21,5 +18,10 @@ public class ParkingLotController {
         parkingLotService.createParkingLot(createParkingLotRequestDto);
     }
 
+    //给停车场安排停车小弟
+    @PostMapping("/assignParkingLot/{parkingLotId}/{employeeId}")
+    public void assignParkingLot(@PathVariable Long parkingLotId, @PathVariable Long employeeId) {
+        parkingLotService.assignParkingLot(parkingLotId,employeeId);
+    }
 }
 

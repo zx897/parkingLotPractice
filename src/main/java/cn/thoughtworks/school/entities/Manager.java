@@ -13,6 +13,7 @@ import javax.persistence.Id;
 @Getter
 @AllArgsConstructor
 @Builder
+@NoArgsConstructor
 public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

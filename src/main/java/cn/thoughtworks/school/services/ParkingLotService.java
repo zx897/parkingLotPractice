@@ -5,4 +5,5 @@ import cn.thoughtworks.school.entities.dto.createParkingLotRequestDto;
 public interface ParkingLotService {
     void createParkingLot(createParkingLotRequestDto createParkingLotRequestDto);
 
+    void assignParkingLot(Long parkingLotId, Long employeeId);
 }
