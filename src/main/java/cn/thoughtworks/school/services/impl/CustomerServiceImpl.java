@@ -4,17 +4,15 @@ import cn.thoughtworks.school.entities.Customer;
 import cn.thoughtworks.school.entities.dto.createCustomerRequestDTO;
 import cn.thoughtworks.school.repository.CustomerRepository;
 import cn.thoughtworks.school.services.CustomerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 
 @Service
+@RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
 
-    final CustomerRepository customerRepository;
-
-    public CustomerServiceImpl(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-    }
+    private final CustomerRepository customerRepository;
 
     @Override
     public void createCustomer(createCustomerRequestDTO createCustomerRequestDTO) {

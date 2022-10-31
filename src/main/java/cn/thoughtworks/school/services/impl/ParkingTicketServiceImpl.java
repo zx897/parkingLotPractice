@@ -8,33 +8,37 @@ import cn.thoughtworks.school.repository.CustomerRepository;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.repository.ParkingTicketRepository;
 import cn.thoughtworks.school.services.ParkingTicketService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 
 @Service
+@RequiredArgsConstructor
 public class ParkingTicketServiceImpl implements ParkingTicketService {
-    ParkingTicketRepository parkingTicketRepository;
-    EmployeeRepository employeeRepository;
-    CustomerRepository customerRepository;
-
-    public ParkingTicketServiceImpl(ParkingTicketRepository parkingTicketRepository, EmployeeRepository employeeRepository, CustomerRepository customerRepository) {
-        this.parkingTicketRepository = parkingTicketRepository;
-        this.employeeRepository = employeeRepository;
-        this.customerRepository = customerRepository;
-    }
+    private final ParkingTicketRepository parkingTicketRepository;
+    private final EmployeeRepository employeeRepository;
+    private final CustomerRepository customerRepository;
 
     @Override
     public void creatParkingTicket(Long employeeId, Long customerId) {
         Optional<Employee> employeeById = employeeRepository.findById(employeeId);
         Optional<Customer> customerById = customerRepository.findById(customerId);
         ParkingTicket parkingTicket = ParkingTicket.builder()
-                .type(Type.RECEIPT)
+                .type(Type.PARKED)
                 .customer(customerById.orElse(null))
                 .employee(employeeById.orElse(null))
                 .build();
         parkingTicketRepository.save(parkingTicket);
 
+    }
+
+    @Override
+    public void finishParkingTicket(Long customerId) {
+        Optional<ParkingTicket> parkingTicketById = parkingTicketRepository.findById(customerId);
+        if (parkingTicketById.isPresent()) {
+            ParkingTicket parkingTicket = parkingTicketById.get();
+            parkingTicket.setType(Type.FINISHED );        }
     }
 }

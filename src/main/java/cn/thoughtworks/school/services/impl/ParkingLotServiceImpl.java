@@ -6,18 +6,17 @@ import cn.thoughtworks.school.entities.dto.createParkingLotRequestDto;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.repository.ParkingLotRepository;
 import cn.thoughtworks.school.services.ParkingLotService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 
 @Service
+@RequiredArgsConstructor
 public class ParkingLotServiceImpl implements ParkingLotService {
 
-    ParkingLotRepository parkingLotRepository;
-    EmployeeRepository employeeRepository;
+    private final ParkingLotRepository parkingLotRepository;
+    private final EmployeeRepository employeeRepository;
 
-    public ParkingLotServiceImpl(ParkingLotRepository parkingLotRepository) {
-        this.parkingLotRepository = parkingLotRepository;
-    }
 
     @Override
     public void createParkingLot(createParkingLotRequestDto createParkingLotRequestDto) {
@@ -31,7 +30,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     public void assignParkingLot(Long parkingLotId, Long employeeId) {
         ParkingLot parkingLot = parkingLotRepository.findById(parkingLotId).orElseThrow(null);
         Employee employee = employeeRepository.findById(employeeId).orElseThrow(null);
-        parkingLot.setEmployee(employee);
-        parkingLotRepository.save(parkingLot);
+        if(parkingLot != null && employee != null){
+            parkingLot.setEmployee(employee);
+            parkingLotRepository.save(parkingLot);
+        }
     }
 }

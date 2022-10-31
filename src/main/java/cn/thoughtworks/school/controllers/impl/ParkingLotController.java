@@ -13,7 +13,7 @@ public class ParkingLotController {
         this.parkingLotService = parkingLotService;
     }
 
-    @PostMapping("/createParking-lot")
+    @PostMapping("/createParking-lot")  
     public void creatParkingLot(@RequestBody createParkingLotRequestDto createParkingLotRequestDto) {
         parkingLotService.createParkingLot(createParkingLotRequestDto);
     }

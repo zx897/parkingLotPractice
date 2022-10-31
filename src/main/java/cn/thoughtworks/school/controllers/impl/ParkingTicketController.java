@@ -15,10 +15,17 @@ public class ParkingTicketController {
         this.parkingTicketService = parkingTicketService;
     }
 
-    @PostMapping("/creatParkingTicket/{employeeId}/{customerId}")
+
+    @PostMapping("/assignParkingTicket/{employeeId}/{customerId}")
 
     public void creatParkingTicket(@PathVariable Long employeeId, @PathVariable Long customerId) {
         parkingTicketService.creatParkingTicket(employeeId, customerId);
+    }
+
+    //顾客取车
+    @PostMapping("/finishParkingTicket/{customerId}")
+    public void finishParkingTicket( @PathVariable Long customerId) {
+        parkingTicketService.finishParkingTicket(customerId);
     }
 
 }
