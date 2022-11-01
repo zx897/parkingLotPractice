@@ -20,6 +20,7 @@ public class ParkingTicket {
     @OneToOne
     @JoinColumn(name = "employeeId")
     private Employee  employee;
+    @Enumerated(EnumType.STRING)
     private Type type ;
 
 }

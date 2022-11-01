@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/employee")
 public class EmployeeController {
 
-    final EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
     @PostMapping("/createEmloyee")
-
     public void createEmloyee(@RequestBody createEmployeRequestDTO createEmployeRequestDTO) {
         employeeService.createEmployee(createEmployeRequestDTO);
     }

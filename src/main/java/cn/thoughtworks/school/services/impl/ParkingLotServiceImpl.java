@@ -2,7 +2,8 @@ package cn.thoughtworks.school.services.impl;
 
 import cn.thoughtworks.school.entities.Employee;
 import cn.thoughtworks.school.entities.ParkingLot;
-import cn.thoughtworks.school.entities.dto.createParkingLotRequestDto;
+import cn.thoughtworks.school.entities.dto.ParkingLotAssignDTO;
+import cn.thoughtworks.school.entities.dto.createParkingLotRequestDTO;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.repository.ParkingLotRepository;
 import cn.thoughtworks.school.services.ParkingLotService;
@@ -19,15 +20,18 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
 
     @Override
-    public void createParkingLot(createParkingLotRequestDto createParkingLotRequestDto) {
+    public void createParkingLot(createParkingLotRequestDTO createParkingLotRequestDto) {
         ParkingLot parkingLot = ParkingLot.builder()
                 .name(createParkingLotRequestDto.getName())
                 .build();
         parkingLotRepository.save(parkingLot);
     }
 
+
     @Override
-    public void assignParkingLot(Long parkingLotId, Long employeeId) {
+    public void assignParkingLot(ParkingLotAssignDTO parkingLotAssignDTO) {
+        Long parkingLotId = parkingLotAssignDTO.getParkingLotId();
+        Long employeeId = parkingLotAssignDTO.getEmployeeId();
         ParkingLot parkingLot = parkingLotRepository.findById(parkingLotId).orElseThrow(null);
         Employee employee = employeeRepository.findById(employeeId).orElseThrow(null);
         if(parkingLot != null && employee != null){

@@ -1,9 +1,10 @@
 package cn.thoughtworks.school.services;
 
-import cn.thoughtworks.school.entities.dto.createParkingLotRequestDto;
+import cn.thoughtworks.school.entities.dto.ParkingLotAssignDTO;
+import cn.thoughtworks.school.entities.dto.createParkingLotRequestDTO;
 
 public interface ParkingLotService {
-    void createParkingLot(createParkingLotRequestDto createParkingLotRequestDto);
+    void createParkingLot(createParkingLotRequestDTO createParkingLotRequestDto);
 
-    void assignParkingLot(Long parkingLotId, Long employeeId);
+    void assignParkingLot(ParkingLotAssignDTO parkingLotAssignDTO);
 }
