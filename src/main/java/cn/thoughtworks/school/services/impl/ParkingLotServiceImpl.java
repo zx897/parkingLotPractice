@@ -3,7 +3,7 @@ package cn.thoughtworks.school.services.impl;
 import cn.thoughtworks.school.entities.Employee;
 import cn.thoughtworks.school.entities.ParkingLot;
 import cn.thoughtworks.school.entities.dto.ParkingLotAssignDTO;
-import cn.thoughtworks.school.entities.dto.createParkingLotRequestDTO;
+import cn.thoughtworks.school.entities.dto.ParkingLotCreatRequestDTO;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.repository.ParkingLotRepository;
 import cn.thoughtworks.school.services.ParkingLotService;
@@ -20,9 +20,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
 
     @Override
-    public void createParkingLot(createParkingLotRequestDTO createParkingLotRequestDto) {
+    public void createParkingLot(ParkingLotCreatRequestDTO parkingLotCreatRequestDto) {
         ParkingLot parkingLot = ParkingLot.builder()
-                .name(createParkingLotRequestDto.getName())
+                .name(parkingLotCreatRequestDto.getName())
                 .build();
         parkingLotRepository.save(parkingLot);
     }

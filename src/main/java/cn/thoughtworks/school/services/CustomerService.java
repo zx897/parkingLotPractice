@@ -1,7 +1,7 @@
 package cn.thoughtworks.school.services;
 
-import cn.thoughtworks.school.entities.dto.createCustomerRequestDTO;
+import cn.thoughtworks.school.entities.dto.CustomerRequestCreatDTO;
 
 public interface CustomerService {
-    void createCustomer(createCustomerRequestDTO createCustomerRequestDTO);
+    void createCustomer(CustomerRequestCreatDTO CustomerRequestCreatDTO);
 }

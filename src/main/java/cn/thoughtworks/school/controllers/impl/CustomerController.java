@@ -1,6 +1,6 @@
 package cn.thoughtworks.school.controllers.impl;
 
-import cn.thoughtworks.school.entities.dto.createCustomerRequestDTO;
+import cn.thoughtworks.school.entities.dto.CustomerRequestCreatDTO;
 import cn.thoughtworks.school.services.CustomerService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +19,7 @@ public class CustomerController {
     }
 
     @PostMapping("/createCustomer")
-    public void createCustomer(@RequestBody createCustomerRequestDTO createCustomerRequestDTO) {
-        customerService.createCustomer(createCustomerRequestDTO);
+    public void createCustomer(@RequestBody CustomerRequestCreatDTO CustomerRequestCreatDTO) {
+        customerService.createCustomer(CustomerRequestCreatDTO);
     }
 }

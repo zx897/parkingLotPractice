@@ -1,6 +1,6 @@
 package cn.thoughtworks.school.controllers.impl;
 
-import cn.thoughtworks.school.entities.dto.createEmployeRequestDTO;
+import cn.thoughtworks.school.entities.dto.EmployeCreateRequestDTO;
 import cn.thoughtworks.school.services.EmployeeService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +19,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/createEmloyee")
-    public void createEmloyee(@RequestBody createEmployeRequestDTO createEmployeRequestDTO) {
-        employeeService.createEmployee(createEmployeRequestDTO);
+    public void createEmloyee(@RequestBody EmployeCreateRequestDTO EmployeCreateRequestDTO) {
+        employeeService.createEmployee(EmployeCreateRequestDTO);
     }
 }
