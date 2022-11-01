@@ -20,7 +20,7 @@ public class ParkingLotController {
     }
 
     //给停车场安排停车小弟
-    @PostMapping("/assignParkingLot/{parkingLotId}/{employeeId}")
+    @PostMapping("/assignParkingLot")
     public void assignParkingLot(@RequestBody ParkingLotAssignDTO parkingLotAssignDTO) {
         parkingLotService.assignParkingLot(parkingLotAssignDTO);
     }

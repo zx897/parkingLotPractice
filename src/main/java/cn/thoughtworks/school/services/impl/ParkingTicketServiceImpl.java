@@ -4,6 +4,7 @@ import cn.thoughtworks.school.entities.Customer;
 import cn.thoughtworks.school.entities.Employee;
 import cn.thoughtworks.school.entities.ParkingTicket;
 import cn.thoughtworks.school.entities.Type;
+import cn.thoughtworks.school.entities.dto.ParkingTicketAssignDTO;
 import cn.thoughtworks.school.repository.CustomerRepository;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.repository.ParkingTicketRepository;
@@ -32,7 +33,9 @@ public class ParkingTicketServiceImpl implements ParkingTicketService {
     }
 
     @Override
-    public void assignParkingTicket(Long employeeId, Long customerId) {
+    public void assignParkingTicket(ParkingTicketAssignDTO parkingTicketAssignDTO) {
+        Long employeeId = parkingTicketAssignDTO.getEmployeeId();
+        Long customerId = parkingTicketAssignDTO.getCustomerId();
         Optional<Employee> employeeById = employeeRepository.findById(employeeId);
         Optional<ParkingTicket> parkingTicketById = parkingTicketRepository.findById(customerId);
         if (parkingTicketById.isPresent() && employeeById.isPresent()) {

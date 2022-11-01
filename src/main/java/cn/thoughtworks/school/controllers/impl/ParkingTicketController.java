@@ -1,5 +1,6 @@
 package cn.thoughtworks.school.controllers.impl;
 
+import cn.thoughtworks.school.entities.dto.ParkingTicketAssignDTO;
 import cn.thoughtworks.school.services.ParkingTicketService;
 import com.sun.tools.javac.comp.Todo;
 import org.springframework.web.bind.annotation.*;
@@ -21,14 +22,14 @@ public class ParkingTicketController {
     }
 
     //小弟抢单
-    @PostMapping("/assignParkingTicket/{employeeId}/{customerId}")
-    public void assignParkingTicket(@PathVariable Long employeeId, @PathVariable Long customerId) {
-        parkingTicketService.assignParkingTicket(employeeId, customerId);
+    @PostMapping("/assignParkingTicket")
+    public void assignParkingTicket(@RequestBody ParkingTicketAssignDTO parkingTicketAssignDTO) {
+        parkingTicketService.assignParkingTicket(parkingTicketAssignDTO);
     }
 
     //顾客取车
-    @PostMapping("/finishParkingTicket/{customerId}")
-    public void finishParkingTicket( @PathVariable Long customerId) {
+    @PostMapping("/finishParkingTicket")
+    public void finishParkingTicket( @RequestBody Long customerId) {
         parkingTicketService.finishParkingTicket(customerId);
     }
 
