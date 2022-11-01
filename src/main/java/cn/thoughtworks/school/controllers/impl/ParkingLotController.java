@@ -1,20 +1,21 @@
 package cn.thoughtworks.school.controllers.impl;
 
-import cn.thoughtworks.school.entities.dto.ParkingLotAssignDTO;
-import cn.thoughtworks.school.entities.dto.ParkingLotCreatRequestDTO;
+import cn.thoughtworks.school.controllers.impl.dto.ParkingLotAssignDTO;
+import cn.thoughtworks.school.controllers.impl.dto.ParkingLotCreatRequestDTO;
 import cn.thoughtworks.school.services.ParkingLotService;
-import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/parkingLot")
+@RequiredArgsConstructor
 public class ParkingLotController {
     private final ParkingLotService parkingLotService;
 
-    public ParkingLotController(ParkingLotService parkingLotService) {
-        this.parkingLotService = parkingLotService;
-    }
-
-    @PostMapping("/createParking-lot")
+    @PostMapping("/createParkingLot")
     public void creatParkingLot(@RequestBody ParkingLotCreatRequestDTO parkingLotCreatRequestDto) {
         parkingLotService.createParkingLot(parkingLotCreatRequestDto);
     }

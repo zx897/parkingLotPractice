@@ -2,8 +2,8 @@ package cn.thoughtworks.school.services.impl;
 
 import cn.thoughtworks.school.entities.Employee;
 import cn.thoughtworks.school.entities.ParkingLot;
-import cn.thoughtworks.school.entities.dto.ParkingLotAssignDTO;
-import cn.thoughtworks.school.entities.dto.ParkingLotCreatRequestDTO;
+import cn.thoughtworks.school.controllers.impl.dto.ParkingLotAssignDTO;
+import cn.thoughtworks.school.controllers.impl.dto.ParkingLotCreatRequestDTO;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.repository.ParkingLotRepository;
 import cn.thoughtworks.school.services.ParkingLotService;

@@ -4,7 +4,7 @@ import cn.thoughtworks.school.entities.Customer;
 import cn.thoughtworks.school.entities.Employee;
 import cn.thoughtworks.school.entities.ParkingTicket;
 import cn.thoughtworks.school.entities.Type;
-import cn.thoughtworks.school.entities.dto.ParkingTicketAssignDTO;
+import cn.thoughtworks.school.controllers.impl.dto.ParkingTicketAssignDTO;
 import cn.thoughtworks.school.repository.CustomerRepository;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.repository.ParkingTicketRepository;

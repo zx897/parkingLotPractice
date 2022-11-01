@@ -1,7 +1,7 @@
 package cn.thoughtworks.school.services.impl;
 
 import cn.thoughtworks.school.entities.Employee;
-import cn.thoughtworks.school.entities.dto.EmployeCreateRequestDTO;
+import cn.thoughtworks.school.controllers.impl.dto.EmployeCreateRequestDTO;
 import cn.thoughtworks.school.repository.EmployeeRepository;
 import cn.thoughtworks.school.services.EmployeeService;
 import lombok.RequiredArgsConstructor;

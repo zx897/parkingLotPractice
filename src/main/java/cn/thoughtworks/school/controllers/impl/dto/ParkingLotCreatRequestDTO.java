@@ -1,4 +1,4 @@
-package cn.thoughtworks.school.entities.dto;
+package cn.thoughtworks.school.controllers.impl.dto;
 
 import lombok.Getter;
 import lombok.Setter;

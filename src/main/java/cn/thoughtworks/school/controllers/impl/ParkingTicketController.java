@@ -1,18 +1,15 @@
 package cn.thoughtworks.school.controllers.impl;
 
-import cn.thoughtworks.school.entities.dto.ParkingTicketAssignDTO;
+import cn.thoughtworks.school.controllers.impl.dto.ParkingTicketAssignDTO;
 import cn.thoughtworks.school.services.ParkingTicketService;
-import com.sun.tools.javac.comp.Todo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(value = "/parkingTicket")
 public class ParkingTicketController {
     private final ParkingTicketService parkingTicketService;
-
-    public ParkingTicketController(ParkingTicketService parkingTicketService) {
-        this.parkingTicketService = parkingTicketService;
-    }
 
 
     //为顾客生成停车单

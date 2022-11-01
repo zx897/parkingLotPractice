@@ -1,7 +1,7 @@
 package cn.thoughtworks.school.services.impl;
 
+import cn.thoughtworks.school.controllers.impl.dto.CustomerRequestCreatDTO;
 import cn.thoughtworks.school.entities.Customer;
-import cn.thoughtworks.school.entities.dto.CustomerRequestCreatDTO;
 import cn.thoughtworks.school.repository.CustomerRepository;
 import cn.thoughtworks.school.services.CustomerService;
 import lombok.RequiredArgsConstructor;
