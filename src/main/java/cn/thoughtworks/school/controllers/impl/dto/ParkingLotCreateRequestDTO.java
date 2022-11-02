@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ParkingLotCreatRequestDTO {
+public class ParkingLotCreateRequestDTO {
+    //todo 非空
     private String name;
 }

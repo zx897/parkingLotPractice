@@ -16,8 +16,12 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+    // TODO: 2022/11/2 添加查案的接口
+    // TODO: 2022/11/2  横杠命名方式 对uri
+    // TODO: 2022/11/2 manager
+
     @PostMapping("/createEmloyee")
-    public void createEmloyee(@RequestBody EmployeCreateRequestDTO employeCreateRequestDTO) {
+    public void createEmployee(@RequestBody EmployeCreateRequestDTO employeCreateRequestDTO) {
         employeeService.createEmployee(employeCreateRequestDTO);
     }
 }

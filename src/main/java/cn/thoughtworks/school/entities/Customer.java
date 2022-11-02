@@ -12,9 +12,9 @@ import javax.persistence.Id;
 @Entity
 @Setter
 @Getter
-@RequiredArgsConstructor
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

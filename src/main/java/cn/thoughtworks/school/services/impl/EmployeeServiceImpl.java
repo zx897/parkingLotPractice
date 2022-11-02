@@ -15,9 +15,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     @Override
-    public void createEmployee(EmployeCreateRequestDTO EmployeCreateRequestDTO) {
+    public void createEmployee(EmployeCreateRequestDTO employeCreateRequestDTO) {
         Employee employee = Employee.builder()
-                .name(EmployeCreateRequestDTO.getName())
+                .name(employeCreateRequestDTO.getName())
                 .build();
         employeeRepository.save(employee);
 

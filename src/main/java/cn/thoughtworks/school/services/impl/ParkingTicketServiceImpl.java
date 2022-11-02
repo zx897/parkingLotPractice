@@ -24,6 +24,7 @@ public class ParkingTicketServiceImpl implements ParkingTicketService {
 
     @Override
     public void createParkingTicket(Long customerId) {
+        // TODO: 2022/11/2  判断客户是否找到
         Optional<Customer> customerById = customerRepository.findById(customerId);
         ParkingTicket parkingTicket = ParkingTicket.builder()
                 .type(Type.UNSIGNED)
@@ -38,6 +39,7 @@ public class ParkingTicketServiceImpl implements ParkingTicketService {
         Long customerId = parkingTicketAssignDTO.getCustomerId();
         Optional<Employee> employeeById = employeeRepository.findById(employeeId);
         Optional<ParkingTicket> parkingTicketById = parkingTicketRepository.findById(customerId);
+        // TODO: 2022/11/2 判断是否被分配 
         if (parkingTicketById.isPresent() && employeeById.isPresent()) {
             ParkingTicket parkingTicket = parkingTicketById.get();
             parkingTicket.setType(Type.PARKED );
@@ -50,6 +52,7 @@ public class ParkingTicketServiceImpl implements ParkingTicketService {
     @Override
     public void finishParkingTicket(Long customerId) {
         Optional<ParkingTicket> parkingTicketById = parkingTicketRepository.findById(customerId);
+        // TODO: 2022/11/2  添加状态判断
         if (parkingTicketById.isPresent()) {
             ParkingTicket parkingTicket = parkingTicketById.get();
             parkingTicket.setType(Type.FINISHED );        }
